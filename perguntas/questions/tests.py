@@ -5,22 +5,11 @@ from .models import Question
 
 from django.contrib.auth import get_user_model
 
-import factory
+from questions.factory import UserFactory
 
 from . import models
 
 from rest_framework.test import APIClient
-
-class UserFactory(factory.DjangoModelFactory):
-   last_name = factory.Faker('name')
-   username = factory.Faker('email')
-   email = factory.Faker('email')
-   password = factory.PostGenerationMethodCall('set_password', '123456')
-   is_active = True
-
-   class Meta:
-       model = get_user_model()
-
 
 class QuestionEndpoint(TestCase):
 

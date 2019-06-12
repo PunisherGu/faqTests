@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+import factory
 
 class UserFactory(factory.DjangoModelFactory):
    last_name = factory.Faker('name')
