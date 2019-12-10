@@ -19,8 +19,11 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('', include('questions.urls')),
+    path('admin/', admin.site.urls),
 ]
 
 urlpatterns += [
     path('api-auth/', include('rest_framework.urls')),
 ]
+
+admin.site.site_header = ("Administração teste") #Modificaçao no header do admin

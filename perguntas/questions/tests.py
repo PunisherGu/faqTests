@@ -30,9 +30,5 @@ class QuestionEndpoint(TestCase):
     def test_endpoint_post(self):
         client = APIClient()
         client.login(username = UserFactory(), password='123456')
-        response = client.post('/questions/', {'text': 'teste post', 'answer': 'correto', 'ordem':'3'}, format='json')
+        response = client.post('/questions/', {'text': 'teste post', 'answer': 'correto', 'ordem':3}, format="json")
         self.assertEqual(response.status_code, 201)
-
-
-if __name__ == '__main__':
-    unittest.main()
